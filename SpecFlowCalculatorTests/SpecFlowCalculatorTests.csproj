@@ -23,4 +23,25 @@
         <ProjectReference Include="..\ICT3101_Calculator\ICT3101_Calculator.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Features\UsingCalculatorFactorial.feature.cs">
+        <DependentUpon>UsingCalculatorFactorial.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
+      <Compile Update="Features\UsingCalculatorAvailability.feature.cs">
+        <DependentUpon>UsingCalculatorAvailability.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
+      <Compile Update="Features\UsingCalculatorBasicReliability.feature.cs">
+        <DependentUpon>UsingCalculatorBasicReliability.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
+    </ItemGroup>
+
 </Project>

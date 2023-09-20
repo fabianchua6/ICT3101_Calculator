@@ -64,7 +64,6 @@ namespace ICT3101_Caculator.UnitTests
             Assert.That(result, Is.EqualTo(0));
         }
 
-
         // Task 14
         // Ensure that an ArgumentException is thrown
         [Test]

@@ -172,5 +172,43 @@
 
             return result;
         }
+
+        // 2.2 17.
+        public double MTBF(double MTTF, double MTTR)
+        {
+            // if either is negative
+            if (MTTF < 0 || MTTR < 0)
+            {
+                throw new ArgumentException("MTTF or MTTR cannot be negative");
+            }
+
+            return (MTTF + MTTR);
+        }
+
+        public double Availability(double MTTF, double MTBF)
+        {
+            // if either is negative
+            if (MTTF < 0 || MTBF < 0)
+            {
+                throw new ArgumentException("MTTF or MTBF cannot be negative");
+            }
+
+            return (MTTF / MTBF);
+        }
+
+        // 2.2 18.
+
+        // init_fail(1 - avg_fail/total_fail)
+        public double CurrentFailure(double init_fail, double avg_fail, double total_fail)
+        {
+            // round to 0 decimal places
+            return Math.Round(init_fail * (1 - avg_fail / total_fail), 0);
+        }
+
+        // total_fail(1-exp(init_fail*time/total_fail)
+        public double AvgExpectedFailure(double init_fail, double total_fail, double time)
+        {
+            return Math.Round(total_fail * (1 - Math.Exp(-init_fail * time / total_fail)), 0);
+        }
     }
 }

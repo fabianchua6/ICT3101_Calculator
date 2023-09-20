@@ -20,23 +20,23 @@ namespace SpecFlowCalculatorTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UsingCalculatorDivision")]
-    public partial class UsingCalculatorDivisionFeature
+    [NUnit.Framework.DescriptionAttribute("UsingCalculatorAvailability")]
+    public partial class UsingCalculatorAvailabilityFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "UsingCalculatorDivsion.feature"
+#line 1 "UsingCalculatorAvailability.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "UsingCalculatorDivision", "In order to conquer divisions\nAs a division enthusiast\nI want to understand a var" +
-                    "iety of division operations", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "UsingCalculatorAvailability", "In order to calculate MTBF and Availability\nAs someone who struggles with math\nI " +
+                    "want to be able to use my calculator to do this", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,24 +75,23 @@ namespace SpecFlowCalculatorTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dividing numbers in various scenarios")]
-        [NUnit.Framework.CategoryAttribute("Divisions")]
-        [NUnit.Framework.TestCaseAttribute("1", "2", "0.5", null)]
-        [NUnit.Framework.TestCaseAttribute("0", "15", "0", null)]
-        public void DividingNumbersInVariousScenarios(string value1, string value2, string result, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Calculating MTBF")]
+        [NUnit.Framework.CategoryAttribute("Availability")]
+        [NUnit.Framework.TestCaseAttribute("10", "20", "30", null)]
+        public void CalculatingMTBF(string mTTF, string mTTR, string mTBF, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Divisions"};
+                    "Availability"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            argumentsOfScenario.Add("value2", value2);
-            argumentsOfScenario.Add("result", result);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dividing numbers in various scenarios", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            argumentsOfScenario.Add("MTTF", mTTF);
+            argumentsOfScenario.Add("MTTR", mTTR);
+            argumentsOfScenario.Add("MTBF", mTBF);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating MTBF", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -107,33 +106,36 @@ namespace SpecFlowCalculatorTests.Features
         testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-        testRunner.When(string.Format("I have entered {0} and {1} into the calculator and press divide", value1, value2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When(string.Format("I have entered {0} and {1} into the calculator and press MTBF", mTTF, mTTR), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-        testRunner.Then(string.Format("the division result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then(string.Format("the MBTF result should be {0}", mTBF), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dividing zero by a number")]
-        [NUnit.Framework.CategoryAttribute("Divisions")]
-        [NUnit.Framework.TestCaseAttribute("2", null)]
-        [NUnit.Framework.TestCaseAttribute("15", null)]
-        public void DividingZeroByANumber(string value1, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Handling Invalid Inputs")]
+        [NUnit.Framework.CategoryAttribute("Availability")]
+        [NUnit.Framework.TestCaseAttribute("-10", "20", "MTTF or MTTR cannot be negative", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "-20", "MTTF or MTTR cannot be negative", null)]
+        [NUnit.Framework.TestCaseAttribute("-10", "-20", "MTTF or MTTR cannot be negative", null)]
+        public void HandlingInvalidInputs(string invalid_MTTF, string invalid_MTTR, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Divisions"};
+                    "Availability"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dividing zero by a number", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 18
+            argumentsOfScenario.Add("Invalid_MTTF", invalid_MTTF);
+            argumentsOfScenario.Add("Invalid_MTTR", invalid_MTTR);
+            argumentsOfScenario.Add("ErrorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handling Invalid Inputs", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 17
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -143,36 +145,37 @@ namespace SpecFlowCalculatorTests.Features
             else
             {
                 this.ScenarioStart();
-#line 19
+#line 18
         testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 20
-        testRunner.When(string.Format("I have entered 0 and {0} into the calculator and press divide", value1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+        testRunner.When(string.Format("I have entered {0} and {1} into the calculator and press MTBF", invalid_MTTF, invalid_MTTR), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
-        testRunner.Then("the division result should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+        testRunner.Then(string.Format("the calculator should throw an ArgumentException with message {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dividing by zeros")]
-        [NUnit.Framework.CategoryAttribute("Divisions")]
-        [NUnit.Framework.TestCaseAttribute("22", null)]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
-        public void DividingByZeros(string value1, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Calculating Availability")]
+        [NUnit.Framework.CategoryAttribute("Availability")]
+        [NUnit.Framework.TestCaseAttribute("10", "20", "0.5", null)]
+        public void CalculatingAvailability(string mTTF, string mTBF, string availability, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Divisions"};
+                    "Availability"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dividing by zeros", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            argumentsOfScenario.Add("MTTF", mTTF);
+            argumentsOfScenario.Add("MTBF", mTBF);
+            argumentsOfScenario.Add("Availability", availability);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Availability", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 29
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -187,42 +190,10 @@ namespace SpecFlowCalculatorTests.Features
         testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 31
-        testRunner.When(string.Format("I have entered {0} and 0 into the calculator and press divide", value1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When(string.Format("I have entered {0} and {1} into the calculator and press Availability", mTTF, mTBF), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
-        testRunner.Then("the division result should be positive_infinity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dividing by zero by zero")]
-        [NUnit.Framework.CategoryAttribute("Divisions")]
-        public void DividingByZeroByZero()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Divisions"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dividing by zero by zero", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 40
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 41
-        testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 42
-        testRunner.When("I have entered 0 and 0 into the calculator and press divide", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 43
-        testRunner.Then("the division result should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then(string.Format("the availability result should be {0}", availability), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
