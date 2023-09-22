@@ -199,16 +199,16 @@
         // 2.2 18.
 
         // init_fail(1 - avg_fail/total_fail)
-        public double CurrentFailure(double init_fail, double avg_fail, double total_fail)
+        public double CurrentFailure(double initFail, double avgFail, double totalFail)
         {
             // round to 0 decimal places
-            return Math.Round(init_fail * (1 - avg_fail / total_fail), 0);
+            return Math.Round(initFail * (1 - avgFail / totalFail), 0);
         }
 
         // total_fail(1-exp(init_fail*time/total_fail)
-        public double AvgExpectedFailure(double init_fail, double total_fail, double time)
+        public double AvgExpectedFailure(double initFail, double totalFail, double time)
         {
-            return Math.Round(total_fail * (1 - Math.Exp(-init_fail * time / total_fail)), 0);
+            return Math.Round(initFail * (1 - Math.Exp(-totalFail * time / totalFail)), 0);
         }
     }
 }
