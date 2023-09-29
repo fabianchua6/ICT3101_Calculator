@@ -102,13 +102,13 @@ namespace SpecFlowCalculatorTests.Features
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
         testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
         testRunner.When(string.Format("I have entered {0} into the calculator and press factorial", value1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
         testRunner.Then(string.Format("the factorial result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
