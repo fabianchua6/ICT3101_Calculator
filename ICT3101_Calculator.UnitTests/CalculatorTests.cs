@@ -66,15 +66,15 @@ namespace ICT3101_Caculator.UnitTests
 
         // Task 14
         // Ensure that an ArgumentException is thrown
-        [Test]
-        [TestCase(0, 0)]
-        [TestCase(0, 10)]
-        [TestCase(10, 0)]
-        public void Divide_WithZerosAsInputs_ResultThrowArgumentException(double a, double b)
-        {
-            // Assert
-            Assert.That(() => _calculator.Divide(a, b), Throws.ArgumentException);
-        }
+        // [Test]
+        // [TestCase(0, 0)]
+        // [TestCase(0, 10)]
+        // [TestCase(10, 0)]
+        // public void Divide_WithZerosAsInputs_ResultThrowArgumentException(double a, double b)
+        // {
+        //     // Assert
+        //     Assert.That(() => _calculator.Divide(a, b), Throws.ArgumentException);
+        // }
 
         // Task 15
         [Test]

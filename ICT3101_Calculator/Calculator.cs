@@ -208,7 +208,22 @@
         // total_fail(1-exp(init_fail*time/total_fail)
         public double AvgExpectedFailure(double initFail, double totalFail, double time)
         {
-            return Math.Round(initFail * (1 - Math.Exp(-totalFail * time / totalFail)), 0);
+            return Math.Round(totalFail * (1 - Math.Exp(-initFail * time / totalFail)), 0);
         }
+        
+        // initFail * exp(-failIntens*avgFail)
+        public double LogCurrentFailure(double failIntens, double initFail, double avgFail)
+        {
+            return Math.Round(initFail * Math.Exp(-failIntens*avgFail), 2);
+        }
+        
+        // 1/failIntens * ln(initFail * failIntens * time + 1)
+        public double LogAvgExpectedFailure(double failIntens, double initFail, double time)
+        {
+            return Math.Round(1/failIntens * Math.Log(initFail * failIntens * time + 1), 2);
+        }
+        
+        
+        
     }
 }
