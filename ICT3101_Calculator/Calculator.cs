@@ -230,7 +230,12 @@
             // Dependency
             // FileReader getTheMagic = new FileReader();
 
-            string[] magicStrings = fileReader.Read("/Users/fabianchua/Projects/ICT3101_Calculator/ICT3101_Calculator/MagicNumbers.txt");
+            var workingDirectory = Environment.CurrentDirectory;
+            var projectDirectory = Directory.GetParent(workingDirectory)?.Parent?.Parent?.FullName;
+            var filePath = projectDirectory + "\\MagicNumbers.txt";
+
+            string[] magicStrings = fileReader.Read(filePath);
+
             if ((choice >= 0) && (choice < magicStrings.Length))
             {
                 result = Convert.ToDouble(magicStrings[choice]);

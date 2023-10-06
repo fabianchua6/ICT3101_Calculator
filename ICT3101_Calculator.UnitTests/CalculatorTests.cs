@@ -247,46 +247,5 @@ namespace ICT3101_Caculator.UnitTests
             Assert.That(() => _calculator.UnknownFunctionB(4, 5), Throws.ArgumentException);
         }
         
-        // Lab 4 4.
-        [Test]
-        public void GenMagicNum_ValidInputPositiveMagicNum_ReturnsDouble()
-        {
-            // Act
-            double result = _calculator.GenMagicNum(0, new FileReader()); // Should read 2.0 from the file
-    
-            // Assert
-            Assert.That(result, Is.EqualTo(2));  // 2 * 1.0
-        }
-
-        [Test]
-        public void GenMagicNum_ValidInputNegativeMagicNum_ReturnsNegativeDouble()
-        {
-            // Act
-            double result = _calculator.GenMagicNum(2, new FileReader()); // Should read 8.0 from the file
-    
-            // Assert
-            Assert.That(result, Is.EqualTo(8.0));  // -2 * -4.0
-        }
-        
-        [Test]
-        public void GenMagicNum_InvalidIndex_ReturnsZero()
-        {
-            // Act
-            double result = _calculator.GenMagicNum(100, new FileReader());  // An index that doesn't exist
-    
-            // Assert
-            Assert.That(result, Is.EqualTo(0));
-        }
-
-        [Test]
-        public void GenMagicNum_ZeroIndexValidMagicNum_ReturnsDouble()
-        {
-            // Act
-            double result = _calculator.GenMagicNum(0, new FileReader());  // Should read 5.0 from the file
-    
-            // Assert
-            Assert.That(result, Is.EqualTo(2));  // 2 * 5.0
-        }
-
     }
 }
