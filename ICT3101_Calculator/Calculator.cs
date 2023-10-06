@@ -89,7 +89,7 @@
             return (num1 / num2);
         }
 
-        // 15.
+        // 15b.
         public double Factorial(double num1)
         {
             // Handling negative numbers
@@ -118,7 +118,6 @@
             {
                 throw new ArgumentException("Length or height must not be negative");
             }
-
 
             if (l == 0 || h == 0)
             {
@@ -210,20 +209,35 @@
         {
             return Math.Round(totalFail * (1 - Math.Exp(-initFail * time / totalFail)), 0);
         }
-        
+
         // initFail * exp(-failIntens*avgFail)
         public double LogCurrentFailure(double failIntens, double initFail, double avgFail)
         {
-            return Math.Round(initFail * Math.Exp(-failIntens*avgFail), 2);
+            return Math.Round(initFail * Math.Exp(-failIntens * avgFail), 2);
         }
-        
+
         // 1/failIntens * ln(initFail * failIntens * time + 1)
         public double LogAvgExpectedFailure(double failIntens, double initFail, double time)
         {
-            return Math.Round(1/failIntens * Math.Log(initFail * failIntens * time + 1), 2);
+            return Math.Round(1 / failIntens * Math.Log(initFail * failIntens * time + 1), 2);
         }
-        
-        
-        
+
+        // Lab 4 1.
+        public double GenMagicNum(double input, IFileReader fileReader)
+        {
+            double result = 0;
+            int choice = Convert.ToInt16(input);
+            // Dependency
+            // FileReader getTheMagic = new FileReader();
+
+            string[] magicStrings = fileReader.Read("/Users/fabianchua/Projects/ICT3101_Calculator/ICT3101_Calculator/MagicNumbers.txt");
+            if ((choice >= 0) && (choice < magicStrings.Length))
+            {
+                result = Convert.ToDouble(magicStrings[choice]);
+            }
+
+            result = (result > 0) ? (2 * result) : (-2 * result);
+            return result;
+        }
     }
 }
